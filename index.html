@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Tivi{
+        constructor(chanel,volume,status) {
+            this.chanel=chanel;
+            this.volume=volume;
+            this.status=status;
+        }
+        getChanel(){
+            return this.chanel;
+        }
+        setChannel(newChanel){
+            this.chanel=newChanel;
+        }
+        getVolume(){
+            return this.volume;
+        }
+        setVolume(newVolume){
+            this.volume=newVolume
+        }
+        getStatus(){
+            return this.status
+        }
+        setStatus(newStatus){
+            this.status=newStatus;
+        }
+    }
+    class Remote {
+        Onoff(tivi){
+            tivi.setStatus(!tivi.getStatus());
+        }
+        upVolume(tivi){
+            if (tivi.getStatus()){
+                if (get.volume()<5){
+                tivi.setVolume(get.volume()+1)
+                }else {
+                    console.log('max roi')
+                }
+            }else {
+                console.log('tv off')
+            }
+        }
+        downVolume(tivi){
+            if (tivi.getStatus()){
+                if (get.volume()>0){
+                    tivi.setVolume(get.volume()-1)
+                }else {
+                    console.log('ko co tieng')
+                }
+            }else {
+                console.log('tv off')
+            }
+        }
+    }
+    let remote1= new Remote();
+    let tv1 = new Tivi(5,5,false);
+</script>
+</body>
+</html>
